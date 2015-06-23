@@ -18,6 +18,7 @@ to be an edge case of an anagram, but for this kata they are still correct anagr
 def isAnagram(original, test):
 	return True if sorted(original.replace(" ","").lower()) == sorted(test.replace(" ","").lower()) else False
 
-print isAnagram('William Shakespeare', 'I am a weakish speller')
-print isAnagram('silent', 'listen')
-print isAnagram('12345', '54321')
+print(isAnagram("William Shakespeare","I am a weakish speller"), True)
+print(isAnagram("Silent","Listen"), True)
+print(isAnagram("Car","Cat"), False, "Car is not an anagram of Cat")
+print(isAnagram("12345","54321"), True)
