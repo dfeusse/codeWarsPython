@@ -6,9 +6,12 @@ The same goes with 'ooom', solution should return false.
 The solution must be case-insensitive.
 '''
 def exes(s):
-	return True if s.count('x') == s.count('o') else False
+	return True if s.count('x')+s.count('X') == s.count('o')+s.count('O') else False
 
 '''
+def xo(s):
+    return s.lower().count('x') == s.lower().count('o')
+
 def xo(s):
     s = s.lower()
     return s.count('x') == s.count('o')
