@@ -19,17 +19,23 @@ fizzbuzz(45)=="fizz buzz"
 def fizzbuzz(n):
 	if n % 3 == 0 and n % 5 == 0:
 		print "fizz buzz"
-    else:
+	elif n % 3 == 0:
 		return "fizz"
-	'''
 	elif n % 5 == 0:
 		return "buzz"
 	else:
 		return n
-	'''
 
 print fizzbuzz(1)==1
 print fizzbuzz(9)=="fizz"
 print fizzbuzz(25)=="buzz"
 print fizzbuzz(37)==37
 print fizzbuzz(45)=="fizz buzz"
+
+'''
+def fizzbuzz(n):
+    if n % 15 == 0:return 'fizz buzz'
+    elif n % 5 == 0:return 'buzz'
+    elif n % 3 == 0:return 'fizz'
+    return n
+    '''

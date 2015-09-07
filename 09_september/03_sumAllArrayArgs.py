@@ -21,3 +21,11 @@ print sumAll(1,2,3)
 print sumAll(100,100,50)
 print sumAll(1, None, 2)
 print sumAll(1, "dan")
+
+'''
+def sum_all(*a):
+    try:
+        return sum(a)
+    except:
+        return False
+        '''
