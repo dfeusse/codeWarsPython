@@ -12,9 +12,13 @@ More info: https://en.wikipedia.org/wiki/Arithmetic_progression
 '''
 def arithmetic_sequence_elements(a, r, n):
 	orig = [i for i in xrange(a, n*r, r)]
-	L = orig[:n]
-	return ", ".join(str(x) for x in L)
+	return ", ".join(str(x) for x in orig[:n])
 
 
 print arithmetic_sequence_elements(1, 2, 5)
 print arithmetic_sequence_elements(1, -3, 10)
+
+'''
+def arithmetic_sequence_elements(a, r, n):
+    return ', '.join(str(a + b * r) for b in xrange(n))
+'''
