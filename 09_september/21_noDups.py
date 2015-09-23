@@ -17,8 +17,8 @@ def noDups(arr):
 			if i not in newArray and i != None:
 				newArray.append(i)
 		return sorted(newArray)
-		#return sorted([i for i in newArray if i not in newArray and i != None])
+		#return sorted([i for i in arr if i.count(i) == 1 and i != None])
 	else:
 		return "Not an array"
 
-print noDups(['dan', 1, 10, 'emma'])
+print noDups(['dan', 1, 'dan', 10, 'emma'])
