@@ -10,11 +10,28 @@ http://www.codewars.com/kata/reverse-polish-notation-calculator/javascript
 Note: for simplicity's sake, assume that the "/" operator behaves like it usually does in the chosen 
 language: float division in JS, integer division in both Ruby and Python 2 (the defaul Python on this site).
 '''
+import operator
 def solve_postfix(pfx):
-	'''for i in pfx.split()[2:]:
-		print i
 	'''
-	return int(pfx.split()[0]) + int(pfx.split()[1])
+	print pfx.split()[3:][::2]
+	print pfx.split()[4:][::2]
+	print zip(pfx.split()[4:][::2], pfx.split()[3:][::2])
+	'''
+	wholeList = pfx.split()
+	ops = {'+' : operator.add, '-' : operator.sub, '*' : operator.mul, '/' : operator.div, '%' : operator.mod,'^' : operator.xor}
+	#return int(pfx.split()[0]) + ops[pfx.split()[2]] + int(pfx.split()[1])
+	if len(wholeList) > 3:
+		initial = ops[pfx.split()[2]](int(pfx.split()[0]),int(pfx.split()[1]))
+		array = zip(pfx.split()[4:][::2], pfx.split()[3:][::2])
+		for i in array:
+			print i[0]
+			print i[1]
+			initial = ops[i[0]](initial, int(i[1]))
+			print initial
+		return initial
+	else:
+		return ops[pfx.split()[2]](int(pfx.split()[0]),int(pfx.split()[1]))
+	
 
 print(solve_postfix("2 3 +"))#,5)
 print(solve_postfix("2 8 -"))#,-6)
